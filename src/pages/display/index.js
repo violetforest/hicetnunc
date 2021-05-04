@@ -34,6 +34,8 @@ export default class Display extends Component {
     collectionState: false,
     creationsState: true,
     hdao: 0,
+    favoritedState: false,
+    favorites: []
   }
 
   componentWillMount = async () => {
@@ -114,8 +116,20 @@ export default class Display extends Component {
 
   collection = () =>
     this.setState({ collectionState: true, creationsState: false })
+  
+  favorite = () => {
+    this.setState({favoritedState: true})
+    alert("added " + this.state.wallet + " to favorites");
+  }
+
+  unfavorite = () => {
+    this.setState({favoritedState: false})
+    alert("removed " + this.state.wallet + " from favorites");
+  }
+
 
   render() {
+    const isFavorited = this.state.favoritedState;
     return (
       <Page title={this.state.wallet}>
         <Container>
@@ -259,6 +273,18 @@ export default class Display extends Component {
                   collection
                 </Primary>
               </Button>
+              {isFavorited
+                ? <Button onClick={this.unfavorite}>
+                    <Primary>
+                      -
+                    </Primary>
+                  </Button>
+                : <Button onClick={this.favorite}>
+                    <Primary>
+                      +
+                    </Primary>
+                </Button>
+              }
             </div>
           </Padding>
         </Container>
