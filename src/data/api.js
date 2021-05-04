@@ -64,6 +64,22 @@ export const GetLatestFeed = async ({ counter, max_time }) => {
 }
 
 /**
+ * Gets Feed for Favorited Artist
+ * Only from 1 Adddress
+ */
+ export const GetLatestFavorite = async ({ counter, max_time }) => {
+  return new Promise((resolve, reject) => {
+    axios
+      .get(process.env.REACT_APP_FEED, {
+        params: { counter: counter, max_time: max_time },
+      })
+      .then((res) => {
+        resolve(filterFeeds(res.data.result))
+      })
+  })
+}
+
+/**
  * Gets Feed for homepage hDAO
  */
 export const GethDAOFeed = async ({ counter }) => {

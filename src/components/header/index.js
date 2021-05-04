@@ -120,6 +120,11 @@ export const Header = () => {
                       </Button>
                     </li>
                     <li>
+                      <Button onClick={() => handleRoute('/sync')}>
+                        <Primary>favorited</Primary>
+                      </Button>
+                    </li>
+                    <li>
                       <Button onClick={() => handleRoute('/galleries')}>
                         <Primary>galleries</Primary>
                       </Button>

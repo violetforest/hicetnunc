@@ -15,3 +15,7 @@ export const Random = () => {
 export const Featured = () => {
   return <Feeds type={3} />
 }
+
+export const LatestFavorite = () => {
+  return <Feeds type={4} />
+}

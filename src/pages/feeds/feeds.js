@@ -6,6 +6,7 @@ import {
   GethDAOFeed,
   GetRandomFeed,
   GetFeaturedFeed,
+  GetLatestFavorite
 } from '../../data/api'
 import { Page, Container, Padding } from '../../components/layout'
 import { FeedItem } from '../../components/feed-item'
@@ -91,6 +92,20 @@ export const Feeds = ({ type = 0 }) => {
         .catch((e) => {
           setError(true)
         })
+    } else if (type == 4) {
+      GetLatestFavorite({ counter: count, max_time: startTime })
+      .then((result) => {
+        const next = items.concat(result)
+        setItems(next)
+
+        // if original returns less than 10, then there's no more data coming from API
+        if (result.length < 10) {
+          setHasMore(false)
+        }
+      })
+      .catch((e) => {
+        setError(true)
+      })
     }
   }, [count, type])
 
