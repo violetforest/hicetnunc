@@ -6,7 +6,8 @@ export const Favorite = () => {
   const context = useContext(HicetnuncContext)
 
   let isSynced = false
-  const [isFavorited, setIsFavorited] = useState(false)
+  const [canFavorite, setCanFavorite] = useState(false)
+  const wallet = window.location.pathname.split('/')[2]
 
   if (context.acc?.address) {
     isSynced = true
@@ -16,20 +17,20 @@ export const Favorite = () => {
   }
 
   const favorite = function() {
-    setIsFavorited(false)
-    alert("favorited: " + isFavorited);
+    setCanFavorite(false)
+    alert("canFavorite: " + wallet + " my wallet id: " + context.acc?.address);
   }
 
   const unfavorite = function() {
-    setIsFavorited(true)
-    alert("unfavorited : " + isFavorited);
+    setCanFavorite(true)
+    alert("canFavorite : " + wallet + " my wallet id: " + context.acc?.address);
   }
 
   return (
    <span>
       {!isSynced ? <span></span> :
         [
-          (isFavorited
+          (canFavorite
             ? <Button onClick={favorite}>
                 <Primary>
                   -

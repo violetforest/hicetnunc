@@ -43,6 +43,8 @@ export default class Display extends Component {
   componentWillMount = async () => {
     this.context.setPath(window.location.pathname)
 
+    console.log(this.state.wallet);
+
     await GetUserMetadata(this.state.wallet).then((data) => {
       if (data.data.alias) this.setState({ alias: data.data.alias })
       if (data.data.description)
