@@ -3,7 +3,6 @@ import { withRouter } from 'react-router'
 import { BeaconWallet } from '@taquito/beacon-wallet'
 import { TezosToolkit } from '@taquito/taquito'
 import { setItem } from '../utils/storage'
-import { PATH } from '../constants'
 
 const { NetworkType } = require('@airgap/beacon-sdk')
 var ls = require('local-storage')
@@ -160,16 +159,12 @@ class HicetnuncContextProviderClass extends Component {
           )
           .then((op) =>
             op.confirmation(1).then(() => {
+              this.setState({ op: op.hash }) // save hash
               // if everything goes okay, show the success message and redirect to profile
               this.state.setFeedback({
                 message: 'OBJKT minted successfully',
-                progress: false,
-                confirm: true,
-                confirmCallback: () => {
-                  this.setState({ op: op.hash }) // save hash
-                  this.state.setFeedback({ visible: false }) // hide popup
-                  props.history.push(PATH.FEED) // redirect to homepage
-                },
+                progress: true,
+                confirm: false,
               })
             })
           )
@@ -177,11 +172,8 @@ class HicetnuncContextProviderClass extends Component {
             // if any error happens
             this.state.setFeedback({
               message: 'an error occurred ❌',
-              progress: false,
-              confirm: true,
-              confirmCallback: () => {
-                this.state.setFeedback({ visible: false }) // hide popup
-              },
+              progress: true,
+              confirm: false,
             })
           })
       },
@@ -227,6 +219,7 @@ class HicetnuncContextProviderClass extends Component {
       },
 
       claim_hDAO: async (hDAO_amount, objkt_id) => {
+        console.log('claiming', hDAO_amount, objkt_id)
         await Tezos.wallet
           .at('KT1TybhR7XraG75JFYKSrh7KnxukMBT5dor6')
           .then((c) => {
@@ -399,7 +392,7 @@ class HicetnuncContextProviderClass extends Component {
           title: title,
         })
       },
-      hDAO_vote : ls.get('hDAO_vote')
+      hDAO_vote: ls.get('hDAO_vote'),
     }
   }
 
