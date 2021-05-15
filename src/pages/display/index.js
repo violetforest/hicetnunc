@@ -9,6 +9,7 @@ import { walletPreview } from '../../utils/string'
 import { SanitiseOBJKT } from '../../utils/sanitise'
 import { PATH } from '../../constants'
 import { VisuallyHidden } from '../../components/visually-hidden'
+import { Favorite } from '../../components/favorite'
 import { GetUserMetadata } from '../../data/api'
 import { ResponsiveMasonry } from '../../components/responsive-masonry'
 import styles from './styles.module.scss'
@@ -291,6 +292,8 @@ export default class Display extends Component {
               <Button onClick={this.market}>
                 <Primary selected={this.state.marketState}>market</Primary>
               </Button>
+              <Favorite></Favorite>
+
             </div>
           </Padding>
         </Container>
