@@ -114,14 +114,6 @@ query subjktsQuery($subjkt: String!) {
 }
 `
 
-// const query_creatorHdao = `
-// query creatorGallery($address: String!) {
-//   hic_et_nunc_holder(where: {creator: {_eq: $address}}) {
-//     hdao_balance,
-//     address
-//   }
-// }
-// `
 async function fetchSubjkts(subjkt) {
   const { errors, data } = await fetchGraphQL(query_subjkts, 'subjktsQuery', {
     subjkt: subjkt,
@@ -144,23 +136,9 @@ async function fetchCreations(addr) {
     console.error(errors)
   }
   const result = data.hic_et_nunc_token
-  console.log({ result })
+  // console.log({ result })
   return result
 }
-
-// async function fetchCreatorHdao(addr) {
-//   const { errors, data } = await fetchGraphQL(
-//     query_creatorHdao,
-//     'creatorGallery',
-//     { address: addr }
-//   )
-//   if (errors) {
-//     console.error(errors)
-//   }
-//   const result = data.hic_et_nunc_token
-//   console.log({ result })
-//   return result
-// }
 
 export default class Display extends Component {
   static contextType = HicetnuncContext
