@@ -200,9 +200,6 @@ export default class Display extends Component {
 
       this.onReady()
       
-      // let res = await fetchCreatorHdao(wallet)
-      // console.log("ashfoasjdf " + res)
-
     } else {
       let res = await fetchSubjkts(window.location.pathname.split('/')[1])
       console.log(res)
