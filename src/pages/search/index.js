@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Page, Container, Padding } from '../../components/layout'
+import {SearchItem} from '../../components/search-item'
 import { HicetnuncContext } from '../../context/HicetnuncContext'
+import InfiniteScroll from 'react-infinite-scroll-component'
+
 const axios = require('axios')
 
 export class Search extends Component {
@@ -43,10 +46,12 @@ export class Search extends Component {
   searchSubjkt = async (search_query) => {
     const query = `
       query SearchSubjkt($search_query: String) {
-        hic_et_nunc_holder(where: {name: {_ilike: $search_query}}, limit: 30) {
-          name
-          address
+        hic_et_nunc_token(where: {title: {_ilike: $search_query}}) {
+          title
+          description
           metadata
+          thumbnail_uri
+          id
         }
       }
     `;
@@ -71,7 +76,7 @@ export class Search extends Component {
     if (errors) {
       console.error(errors);
     }
-    const result = data.hic_et_nunc_holder
+    const result = data.hic_et_nunc_token
     console.log({ result })
     this.setState({ results: result })
     return result
@@ -79,35 +84,44 @@ export class Search extends Component {
 
   render() {
     return (
-      <Page>
+      <Page title="">
+        <Container>
+          <input
+            type="text"
+            name="search"
+            onChange={this.handleChange}
+            placeholder="search">
+          </input>
+          <button onClick={this.search}>x</button>
+          {
+            this.state.tags.map(e => {
+              return <span>{e._id.tag} </span>
+            })
+          }
+          <div className="searchResults">
+          {
+            this.state.queried && (
+              this.state.results.length > 0 ? 
+              this.state.results.map(result => {
+                return <div className="searchResult">
+                  {result.title} - {result.description} - {result.metadata} {result.thumbnail_uri}
+                </div>
+              }) : "No results"
+            )
+          }
+          </div>
+        </Container>
         <Container>
           <Padding>
-            <input
-              type="text"
-              name="search"
-              onChange={this.handleChange}
-              placeholder="search">
-            </input>
-            <button onClick={this.search}>x</button>
-            {
-              this.state.tags.map(e => {
-                return <span>{e._id.tag} </span>
-              })
-            }
-            <div className="searchResults">
-            {
-              this.state.queried && (
-                this.state.results.length > 0 ? 
-                this.state.results.map(result => {
-                  return <div className="searchResult">
-                    {result.name} - {result.address} - {result.metadata.description}
-                  </div>
-                }) : "No results"
-              )
-            }
-            </div>
+            {this.state.results.map((item, index) => (
+              <SearchItem key={`${item.id}-${index}`} {...item} />
+            ))}
           </Padding>
         </Container>
+  {/*       <BottomBanner>
+          Collecting has been temporarily disabled. Follow <a href="https://twitter.com/hicetnunc2000" target="_blank">@hicetnunc2000</a> or <a href="https://discord.gg/jKNy6PynPK" target="_blank">join the discord</a> for updates.
+        </BottomBanner> */}
+        
       </Page>
     )
   }
