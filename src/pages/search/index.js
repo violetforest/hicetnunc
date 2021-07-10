@@ -15,7 +15,7 @@ export class Search extends Component {
     search: '',
     results: [],
     queried: false,
-    searchCat: ""
+    searchCat: 'subjkt'
   }
 
   componentWillMount = async () => {
@@ -29,7 +29,8 @@ export class Search extends Component {
 
   handleRadioChange = (e) => {
     this.setState({
-      searchCat: e.target.value
+      searchCat: e.target.value,
+      queried: false
     })
   }
 
@@ -135,7 +136,7 @@ export class Search extends Component {
 
   render() {
     return (
-      <Page title="">
+      <Page title="Search">
         <Container>
           <input
             type="text"
@@ -157,8 +158,7 @@ export class Search extends Component {
             id="objkt"
             name="searchCat"
             onChange={this.handleRadioChange}/>
-          <label for="profile">objkt</label>
-          {/* {this.state.searchCat} */}
+          <label for="subjkt">objkt</label>
           <button onClick={this.search}>x</button>
             {/* {
               this.state.tags.map(e => {
@@ -171,7 +171,7 @@ export class Search extends Component {
               (
                 this.state.results.length > 0 ?
                 (
-                  this.state.searchCat === 'subjkt'
+                  this.state.searchCat == 'subjkt'
                   ? 
                   this.state.results.map(result => {
                     return <div className="searchResult">
@@ -179,11 +179,11 @@ export class Search extends Component {
                     </div>
                   })
                   :
-                  this.state.searchCat === 'objkt'
+                  this.state.searchCat == 'objkt'
                   ?
                   <ResponsiveMasonry>
-                    {this.state.results.map((item, index) => (
-                      <SearchItem key={`${item.id}-${index}`} {...item} />
+                    {this.state.results.map((result, index) => (
+                      <SearchItem key={`${result.id}-${index}`} {...result} />
                     ))}
                   </ResponsiveMasonry>
                   :
@@ -194,13 +194,6 @@ export class Search extends Component {
             }
           </div>
         </Container>
-        {/* <Container>
-          <ResponsiveMasonry>
-            {this.state.results.map((item, index) => (
-              <SearchItem key={`${item.id}-${index}`} {...item} />
-            ))}
-          </ResponsiveMasonry>
-        </Container> */}
   {/*       <BottomBanner>
           Collecting has been temporarily disabled. Follow <a href="https://twitter.com/hicetnunc2000" target="_blank">@hicetnunc2000</a> or <a href="https://discord.gg/jKNy6PynPK" target="_blank">join the discord</a> for updates.
         </BottomBanner> */}
