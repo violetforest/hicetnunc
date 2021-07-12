@@ -4,6 +4,8 @@ import {SearchItem} from '../../components/search-item'
 import { HicetnuncContext } from '../../context/HicetnuncContext'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { ResponsiveMasonry } from '../../components/responsive-masonry'
+import Example from './example.js'
+import './index.css';
 
 const axios = require('axios')
 
@@ -15,7 +17,8 @@ export class Search extends Component {
     search: '',
     results: [],
     queried: false,
-    searchCat: 'subjkt'
+    searchCat: 'subjkt',
+    filterType: ''
   }
 
   componentWillMount = async () => {
@@ -138,13 +141,30 @@ export class Search extends Component {
     return (
       <Page title="Search">
         <Container>
+          <Example 
+            filterType="mime type"
+            allItemsSelectedString="all mime types"
+            selectAllString="all mime types"
+            options={[
+              { label: "GLB", value: "GLB" },
+              { label: "MP4", value: "MP4" },
+              { label: "HTML", value: "HTML"}
+            ]}/>
+          <Example 
+            filterType="edition size"
+            allItemsSelectedString="all edition sizes"
+            selectAllString="all edition sizes"
+            options={[
+              { label: "1/1", value: "1/1" },
+              { label: "multiple", value: "multiple"}
+            ]}/>
           <input
             type="text"
             name="search"
             onChange={this.handleChange}
             placeholder="search">
           </input>
-          <input
+          {/* <input
             type="radio"
             value="subjkt"
             id="subjkt"
@@ -157,8 +177,8 @@ export class Search extends Component {
             value="objkt"
             id="objkt"
             name="searchCat"
-            onChange={this.handleRadioChange}/>
-          <label for="subjkt">objkt</label>
+            onChange={this.handleRadioChange}/> */}
+          {/* <label for="subjkt">objkt</label> */}
           <button onClick={this.search}>x</button>
             {/* {
               this.state.tags.map(e => {
