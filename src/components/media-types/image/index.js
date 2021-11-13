@@ -27,7 +27,7 @@ export const ImageComponent = ({
     return (
       <div>
         <div>
-          <LazyLoadImage className={styles.style} src={src} alt="💥" />
+          <LazyLoadImage className={styles.style} src={src} alt="💥" effect="blur" />
         </div>
       </div>
     )
