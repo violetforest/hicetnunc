@@ -14,7 +14,6 @@ import styles from './styles.module.scss'
 import { getItem, setItem } from '../../utils/storage'
 
 /* import { BeaconWallet } from '@taquito/beacon-wallet'
-
 const wallet = new BeaconWallet({
   name: 'hicetnunc.xyz',
   preferredNetwork: 'mainnet',
@@ -36,8 +35,7 @@ export const Header = () => {
   if (context.acc?.address) {
     // is menu closed?
     if (context.collapsed) {
-      const proxyAddress = context.proxyAddress ? ' (' + context.proxyAddress + ')' : ''
-      button = walletPreview(context.acc.address) + proxyAddress
+      button = walletPreview(context.acc.address)
     } else {
       // menu is open
       button = 'unsync'
@@ -46,9 +44,9 @@ export const Header = () => {
 
   //const activeAccount = await wallet.client.getActiveAccount()
   //console.log(activeAccount)
-  const handleRoute = (path) => {
+  const handleRoute = (path, data) => {
     context.setMenu(true)
-    history.push(path)
+    history.push(path, data)
   }
 
   const handleSyncUnsync = () => {
@@ -89,7 +87,52 @@ export const Header = () => {
                 </svg>
               )}
               {/* PRIDE LOGO */}
-              {false && <img src="/hen-pride.gif" alt="pride 2021" />}
+              {false && (
+                <svg
+                  width="74"
+                  height="20"
+                  viewBox="0 0 74 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <mask
+                    id="mask0"
+                    mask-type="alpha"
+                    maskUnits="userSpaceOnUse"
+                    x="0"
+                    y="0"
+                    width="74"
+                    height="20"
+                  >
+                    <path
+                      d="M73.9825 19.9291H67.4484C67.4001 19.8913 67.356 19.8485 67.3169 19.8013C67.2812 19.7561 67.2603 19.701 67.2568 19.6435C67.2568 15.3526 67.2568 11.0579 67.2568 6.70689H60.5837V19.8577H53.8844V0H73.9825V19.9291Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M13.4288 6.57914V0.0563582H20.0681V19.884H13.4927V13.5678C13.4342 13.4907 13.3688 13.419 13.2973 13.3537C13.2523 13.317 13.1973 13.2948 13.1395 13.2898H6.76326V19.8426H0V0.0789021H6.68059V6.57914H13.4288Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M26.9102 6.5829V0.0601192H47.0497C47.0835 2.17176 47.0497 4.34727 47.0685 6.5829H26.9102Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M26.9441 13.3161H47.0009V19.7525C45.4791 20.0117 32.6628 20.0944 26.9441 19.8689V13.3161Z"
+                      fill="black"
+                    />
+                  </mask>
+                  <g mask="url(#mask0)">
+                    <path d="M74 17.5H0V20H74V17.5Z" fill="#750787" />
+                    <path d="M74 15H0V17.5H74V15Z" fill="#004DFF" />
+                    <path d="M74 12.5H0V15H74V12.5Z" fill="#008026" />
+                    <path d="M74 10H0V12.5H74V10Z" fill="#FFED00" />
+                    <path d="M74 7.5H0V10H74V7.5Z" fill="#FF8C00" />
+                    <path d="M74 5H0V7.5H74V5Z" fill="#E40303" />
+                    <path d="M74 2.5H0V5H74V2.5Z" fill="#725123" />
+                    <path d="M74 0H0V2.5H74V0Z" fill="black" />
+                  </g>
+                </svg>
+              )}
             </div>
           </a>
 
@@ -132,25 +175,25 @@ export const Header = () => {
                         </Primary>
                       </Button>
                     </li>
-{/*                     <li>
-                      <Button onClick={() => handleRoute('/collaborate')}>
-                        <Primary>collaborate</Primary>
-                      </Button>
-                    </li> */}
                     <li>
-                      <Button onClick={() => handleRoute('/sync')}>
+                      <Button onClick={() => handleRoute('/sync', 'tz')}>
                         <Primary>manage assets</Primary>
                       </Button>
                     </li>
-                    { context.acc?.address ?
+                    {/* <li>
+                      <Button onClick={() => handleRoute('/sync', 'friends')}>
+                        <Primary>friends</Primary>
+                      </Button>
+                    </li> */}
+{/*                     {context.acc?.address ?
                       <li>
                         <Button onClick={() => handleRoute('/config')}>
-                          <Primary>edit profile</Primary>
+                          <Primary>settings</Primary>
                         </Button>
                       </li>
                       :
                       null
-                    }
+                    } */}
                     <li>
                       <Button onClick={() => handleRoute('/about')}>
                         <Primary>about</Primary>
@@ -158,7 +201,7 @@ export const Header = () => {
                     </li>
                     <li>
                       <Button onClick={() => handleRoute('/faq')}>
-                        <Primary>faq</Primary>
+                        <Primary>help</Primary>
                       </Button>
                     </li>
                   </ul>
