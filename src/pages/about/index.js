@@ -24,6 +24,22 @@ export class About extends Component {
   render() {
     return (
       <Page title="about" large>
+        
+        <Container>
+          <Padding>
+            <div className={styles.buttons}>
+              <strong>Additional features:</strong>
+            </div>
+              &nbsp;
+                <p>
+                  + rollover on OBJKTs in profile pages shows title, price, and collect button (designed and coded by @crzypatchwork (rafael lima), UFFD (kyle grover), and violetforest)
+                </p>
+                <p>
+                  + feed of latest mints by wallets of which you've collected (designed and coded by @violet_forest and @secondcass)
+                </p>
+          </Padding>
+        </Container>
+
         <Container>
           <Padding>
             <strong>hic et nunc</strong>
@@ -45,19 +61,6 @@ export class About extends Component {
         <Container>
           <Padding>
             <p>{this.language.about.paragraphs[2]}</p>
-          </Padding>
-        </Container>
-
-        <Container>
-          <Padding>
-            <div className={styles.buttons}>
-              <p>Help is available on</p>&nbsp;
-              <Button href="https://github.com/hicetnunc2000/hicetnunc/wiki">
-                <Primary>
-                  <strong>github</strong>
-                </Primary>
-              </Button>
-            </div>
           </Padding>
         </Container>
 
