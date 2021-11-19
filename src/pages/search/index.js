@@ -9,6 +9,7 @@ import { Input } from '../../components/input'
 import { FeedItem } from '../../components/feed-item'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { renderMediaType } from '../../components/media-types'
+import { BottomBanner } from '../../components/bottom-banner'
 import './style.css'
 import { last } from 'lodash'
 
@@ -800,6 +801,9 @@ export class Search extends Component {
               undefined
           }
         </Container>
+        <BottomBanner>
+        This is a forked version of Hicetnunc.
+        </BottomBanner>
       </Page>
     )
   }

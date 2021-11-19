@@ -1196,9 +1196,8 @@ export default class Display extends Component {
             </Container>
           </div>
         )}
-        {/*       <BottomBanner>
-        API is down due to heavy server load — We're working to fix the issue — please be patient with us. <a href="https://discord.gg/mNNSpxpDce" target="_blank">Join the discord</a> for updates.
-      </BottomBanner> */}
+        <BottomBanner>
+        </BottomBanner>
       </Page>
     )
   }

@@ -392,9 +392,8 @@ export const Mint = () => {
           </Container>
         </>
       )}
-{/*       <BottomBanner>
-      Collecting has been temporarily disabled. Follow <a href="https://twitter.com/hicetnunc2000" target="_blank">@hicetnunc2000</a> or <a href="https://discord.gg/jKNy6PynPK" target="_blank">join the discord</a> for updates.
-      </BottomBanner> */}
+      <BottomBanner>
+      </BottomBanner>
     </Page>
   )
 }

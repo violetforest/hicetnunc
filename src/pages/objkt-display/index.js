@@ -316,6 +316,7 @@ export const ObjktDisplay = () => {
           </Container>
       )}
       <div style={{ height: '40px' }}></div>
+      <BottomBanner></BottomBanner>
     </Page>
   )
 }
