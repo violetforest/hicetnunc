@@ -1027,23 +1027,23 @@ export default class Display extends Component {
                             })}
                           </div>
                         </Button>
-                        {/* <div className={styles.cardContainer}>
-                        <div className={styles.card}>
-                          <div className={styles.cardText}>
-                            <div>OBJKT#{nft.id}</div>
-                            <div className={styles.cardTitle}>{nft.title}</div>
-                          </div>
-                          <div className={styles.cardCollect}>
-                            <Button onClick={() => this.context.collect(nft.swaps[0].id, nft.swaps[0].price)}>
-                              <Purchase>
-                                <div className={styles.cardCollectPrice}>
-                                  {nft.swaps && nft.swaps.length > 0 ? 'collect for ' + nft.swaps[0].price / 1000000 + ' tez' : 'not for sale'}
-                                </div>
-                              </Purchase>
-                            </Button>
+                        <div className={styles.cardContainer}>
+                          <div className={styles.card}>
+                            <div className={styles.cardText}>
+                              <div>OBJKT#{nft.id}</div>
+                              <div className={styles.cardTitle}>{nft.title}</div>
+                            </div>
+                            <div className={styles.cardCollect}>
+                              <Button onClick={() => this.context.collect(nft.swaps[0].id, nft.swaps[0].price)}>
+                                <Purchase>
+                                  <div className={styles.cardCollectPrice}>
+                                    {nft.swaps && nft.swaps.length > 0 ? 'collect for ' + nft.swaps[0].price / 1000000 + ' tez' : 'not for sale'}
+                                  </div>
+                                </Purchase>
+                              </Button>
+                            </div>
                           </div>
                         </div>
-                      </div> */}
                       </div>
                     )
                   })}

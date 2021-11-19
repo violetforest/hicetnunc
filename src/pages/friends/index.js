@@ -33,7 +33,7 @@ query creatorGallery($address: String!) {
 
 async function fetchFrenCreationsGraphQL(operationsDoc, operationName, variables) {
   const result = await fetch(
-    "https://api.hicdex.com/v1/graphql",
+    "https://hdapi.teztools.io/v1/graphql",
     {
       method: "POST",
       body: JSON.stringify({
@@ -84,7 +84,7 @@ const query_frens = `
 
 async function fetchFrensGraphQL(operationsDoc, operationName, variables) {
   const result = await fetch(
-    "https://api.hicdex.com/v1/graphql",
+    "https://hdapi.teztools.io/v1/graphql",
     {
       method: "POST",
       body: JSON.stringify({
