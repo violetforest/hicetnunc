@@ -28,7 +28,7 @@ export class About extends Component {
         <Container>
           <Padding>
             <div>
-              this fork includes features that were developed during HEN but never pushed to production, and possibly new features in the future. its purpose is to reimagine how the post-HEN ecosystem can coexist as different forks/clones
+              this fork includes features that were developed during HEN but never pushed to production, and possibly new features in the future. its purpose is to reimagine how a decentralized post-HEN ecosystem can coexist as different opensourced forks/clones
             </div>
             &nbsp;
             <div>
@@ -37,7 +37,7 @@ export class About extends Component {
             &nbsp;
             <ul>
               <li>
-                rollover on OBJKTs in profile pages shows title, price, and collect button (designed and coded by @crzypatchwork (rafael lima), @_ufffd (kyle grover), & @violet_forest)
+                rollover on OBJKTs in profile pages shows title, price, and collect button (designed and coded by @crzypatchwork (rafael lima), @_ufffd (kyle grover), and @violet_forest)
               </li>
               &nbsp;
               <li>
@@ -53,9 +53,10 @@ export class About extends Component {
 
         <Container>
           <Padding>
-            <strong>
-            this site does not regulate fees unless otherwise stated
-            </strong>
+            &nbsp;
+            <div>
+              for inquiries or collaboration please contact <Button href="https://hicetnunc.art/violetforest"><strong>violetforest</strong></Button>
+            </div>
           </Padding>
         </Container>
 
@@ -63,7 +64,18 @@ export class About extends Component {
           <Padding>
             &nbsp;
             <div>
-              for inquiries or collaboration please contact <Button href="https://hicetnunc.art/violetforest"><strong>violetforest</strong></Button>
+              for further information please join the <Button href="https://discord.gg/pFtUumTX42"><strong>discord</strong></Button>
+            </div>
+          </Padding>
+        </Container>
+
+        <Container>
+          <Padding>
+            &nbsp;
+            <div>
+              <strong>
+              * this site does not regulate fees unless otherwise stated
+              </strong>
             </div>
           </Padding>
         </Container>
