@@ -28,7 +28,7 @@ export class About extends Component {
         <Container>
           <Padding>
             <div>
-              This site includes features that were developed during HEN but never pushed to production, and possibly new features in the future.
+              this site includes features that were developed during HEN but never pushed to production, and possibly new features in the future.
             </div>
             &nbsp;
             <div>
@@ -41,11 +41,11 @@ export class About extends Component {
               </li>
               &nbsp;
               <li>
-              feed of latest mints by wallets of which you've collected (designed and coded by @violet_forest and @secondcass (Cass) (Coming soon)
+              feed of latest mints by wallets of which you've collected (designed and coded by @violet_forest and @secondcass (Cass) <strong>(coming soon)</strong>
               </li>
               &nbsp;
               <li>
-              finish language selection feature started by @andrevenancio (Coming soon, maybe)
+              finish language selection feature started by @andrevenancio <strong>(coming soon, maybe)</strong>
               </li>
             </ul>
           </Padding>
@@ -53,7 +53,18 @@ export class About extends Component {
 
         <Container>
           <Padding>
-            <strong>This site is not in charge of fees.</strong>
+            <strong>
+            this site does not regulate fees unless otherwise stated
+            </strong>
+          </Padding>
+        </Container>
+
+        <Container>
+          <Padding>
+            &nbsp;
+            <div>
+              for inquiries or collaboration please contact <Button href="https://hicetnunc.art/violetforest"><strong>violetforest</strong></Button>
+            </div>
           </Padding>
         </Container>
 
