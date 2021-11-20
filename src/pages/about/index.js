@@ -37,7 +37,7 @@ export class About extends Component {
             &nbsp;
             <ul>
               <li>
-                rollover on OBJKTs in profile pages shows title, price, and collect button (designed and coded by @crzypatchwork (rafael lima), @_ufffd (kyle grover), and @violet_forest)
+                hover on OBJKTs in a wallet's creations shows title, price, and collect button (designed and coded by @crzypatchwork (rafael lima), @_ufffd (kyle grover), and @violet_forest)
               </li>
               &nbsp;
               <li>
