@@ -33,6 +33,3 @@ npm start
 ```
 
 `MIT license`
-
-# Contributing
-
