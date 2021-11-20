@@ -28,7 +28,7 @@ export class About extends Component {
         <Container>
           <Padding>
             <div>
-              this fork includes features that were developed during HEN but never pushed to production, and possibly new features in the future. its purpose is to reimagine how a decentralized post-HEN ecosystem can coexist as different opensourced forks/clones
+              this fork includes features that were developed during HEN but never pushed to production, and possibly new features in the future. its purpose is to imagine how different opensourced forks/clones can coexist in a decentralized, post-HEN ecosystem 
             </div>
             &nbsp;
             <div>
