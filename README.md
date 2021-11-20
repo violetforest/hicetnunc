@@ -6,7 +6,7 @@ hicetnunc UI is intended to experiment with different smart contracts designs.
 There are many services you can use. Currently in the discord there are instructions for different services in the pinned messages in the #general-dev channel
 
 # How to deploy your own fork on render.com
-```
+
 Make an account on render.com, choose your forked/cloned github HEN repository
 
 Settings Configurations (without quotation marks):
