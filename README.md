@@ -18,7 +18,7 @@ Settings Configurations (without quotation marks):
 ```
 build command: "npm run build"
 publish dir: "./build"
-set your ENV variables (env variables are in the .env folder)
+set your ENV variables (env variables are in the .env file https://github.com/violetforest/hicetnunc/blob/main/.env)
 ```
 
 go to the Redirects/Rewrites tab and add the following details:
