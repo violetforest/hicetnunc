@@ -28,7 +28,7 @@ export class About extends Component {
         <Container>
           <Padding>
             <div>
-              this site includes features that were developed during HEN but never pushed to production, and possibly new features in the future.
+              this fork includes features that were developed during HEN but never pushed to production, and possibly new features in the future. its purpose is to reimagine how the post-HEN ecosystem can coexist as different forks/clones
             </div>
             &nbsp;
             <div>
