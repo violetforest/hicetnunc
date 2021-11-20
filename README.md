@@ -28,9 +28,7 @@ docker container rm --force hicetnunc
 .env
 
 ```
-REACT_APP_FEED='http://0.0.0.0:3001/feed'
-REACT_APP_TZ='http://0.0.0.0:3001/tz'
-REACT_APP_OBJKT='http://0.0.0.0:3001/objkt'
+variables are in the .env folder
 ```
 
 in the present version you must have ungrund running accessing hicetnunc's module https://github.com/hicetnunc2000/hicetnunc-api
