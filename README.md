@@ -29,11 +29,17 @@ destination: "/index.html"
 action "Rewrite"
 ```
 
-## other commands
+## running locally
 
 ```
 npm i
 npm start
+```
+
+You might need the following versions of node/npm but some people have success without these versions
+```
+node v12.18.3
+npm 6.14.6
 ```
 
 `MIT license`
