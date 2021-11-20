@@ -13,9 +13,9 @@ export const Page = ({ title = 'hic et nunc', children = null, large }) => {
     <main className={classes}>
       <Helmet>
         {title !== '' ? (
-          <title>{title} - hic et nunc</title>
+          <title>{title} - then & now</title>
         ) : (
-          <title>hic et nunc</title>
+          <title>then & now</title>
         )}
       </Helmet>
       <VisuallyHidden as="h1">{title}</VisuallyHidden>
