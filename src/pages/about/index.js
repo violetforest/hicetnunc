@@ -64,44 +64,9 @@ export class About extends Component {
           <Padding>
             &nbsp;
             <div>
-              for further information please join the <Button href="https://discord.gg/pFtUumTX42"><strong>discord</strong></Button>
-            </div>
-          </Padding>
-        </Container>
-
-        <Container>
-          <Padding>
-            &nbsp;
-            <div>
               <strong>
               * the owner of this site does not regulate smart contracts fees unless otherwise stated. no money is collected by the owner of this fork. for more info regarding where the fees go please contact https://twitter.com/hen_community. the owner is not affiliated with "HEN Community"
               </strong>
-            </div>
-          </Padding>
-        </Container>
-
-        <Container>
-          <Padding>
-            &nbsp;
-            <div>
-              <strong>
-              How to deploy your own fork/clone
-              </strong>
-            </div>
-            <div>
-            Make a free account on render.com, choose your forked/cloned github HEN repository
-
-            Settings Configurations (without quotation marks):
-
-            build command: "npm run build"
-            publish dir: "./build"
-
-
-            go to the Redirects/Rewrites tab
-
-            source: "/*" 
-            destination: "/index.html"
-            action "Rewrite"
             </div>
           </Padding>
         </Container>
