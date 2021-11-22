@@ -74,8 +74,34 @@ export class About extends Component {
             &nbsp;
             <div>
               <strong>
-              * this site does not regulate fees unless otherwise stated
+              * the owner of this site does not regulate smart contracts fees unless otherwise stated. no money is collected by the owner of this fork.
               </strong>
+            </div>
+          </Padding>
+        </Container>
+
+        <Container>
+          <Padding>
+            &nbsp;
+            <div>
+              <strong>
+              How to deploy your own fork/clone
+              </strong>
+            </div>
+            <div>
+            Make a free account on render.com, choose your forked/cloned github HEN repository
+
+            Settings Configurations (without quotation marks):
+
+            build command: "npm run build"
+            publish dir: "./build"
+
+
+            go to the Redirects/Rewrites tab
+
+            source: "/*" 
+            destination: "/index.html"
+            action "Rewrite"
             </div>
           </Padding>
         </Container>
