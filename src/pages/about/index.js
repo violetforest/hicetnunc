@@ -74,7 +74,7 @@ export class About extends Component {
             &nbsp;
             <div>
               <strong>
-              * the owner of this site does not regulate smart contracts fees unless otherwise stated. no money is collected by the owner of this fork.
+              * the owner of this site does not regulate smart contracts fees unless otherwise stated. no money is collected by the owner of this fork. for more info regarding where the fees go please contact https://twitter.com/hen_community
               </strong>
             </div>
           </Padding>
