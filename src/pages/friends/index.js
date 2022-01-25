@@ -9,7 +9,7 @@ const fetch = require('node-fetch')
 
 const query_frenCreations = `
 query creatorGallery($address: String!) {
-  hic_et_nunc_token(limit: 3, where: {creator: {address: {_eq: $address}}, supply: {_gt: 0}}, order_by: {id: desc}) {
+  hic_et_nunc_token(limit: 1, where: {creator: {address: {_eq: $address}}, supply: {_gt: 0}}, order_by: {id: desc}) {
     id
     artifact_uri
     display_uri
@@ -235,7 +235,7 @@ export default class Friends extends Component {
                     }}>
                       No OBJKTs have been collected by this wallet address
                     </p>
-                  {this.state.creations}
+                  {JSON.stringify(this.state.creations)}
                 </Padding>
               </Container>
             )}
@@ -245,7 +245,6 @@ export default class Friends extends Component {
           <div>
             <Container>
               <Padding>
-                {this.state.creations}
                 {this.state.creations.map((item, index) => (
                   <FeedItem key={`${item.id}-${index}`} {...item} creator_id={item.creator.address} />
                 ))}
