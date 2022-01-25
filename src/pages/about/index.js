@@ -44,9 +44,6 @@ export class About extends Component {
               feed of latest mints by wallets of which you've collected (designed and coded by @violet_forest and @secondcass (Cass) <strong>(coming soon)</strong>
               </li>
               &nbsp;
-              <li>
-              finish language selection feature started by @andrevenancio <strong>(coming soon, maybe)</strong>
-              </li>
             </ul>
           </Padding>
         </Container>
